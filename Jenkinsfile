@@ -1,8 +1,8 @@
 pipeline {
   agent {
     docker {
-      image 'eureka'
       args '--network microservicios_docker-microservices-network'
+      image 'nonave:eureka'
     }
 
   }
