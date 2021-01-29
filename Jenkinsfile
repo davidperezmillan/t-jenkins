@@ -7,17 +7,5 @@ pipeline {
       }
     }
 
-    stage('Otros pasos') {
-      steps {
-        sleep 5
-      }
-    }
-
-    stage('final') {
-      steps {
-        echo 'Final'
-      }
-    }
-
   }
 }
