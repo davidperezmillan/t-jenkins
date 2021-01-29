@@ -1,9 +1,15 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      args '--network microservicios_docker-microservices-network'
+      image 'eureka'
+    }
+
+  }
   stages {
-    stage('Iniciamos') {
+    stage('Build') {
       steps {
-        echo 'Iniciamos'
+        sh 'mvn clean install'
       }
     }
 
