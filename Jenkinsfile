@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        sh 'sh mvn --version'
+        sh 'sh docker --version'
       }
     }
 
