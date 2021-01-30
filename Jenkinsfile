@@ -1,7 +1,8 @@
 pipeline {
   agent {
     docker {
-      image 'node:14-alpine'
+      image 'nonave/eureka:latest'
+      args '--network microservicios_docker-microservices-network'
     }
 
   }
