@@ -1,15 +1,9 @@
 pipeline {
-  agent {
-    docker {
-      image 'nonave/eureka:latest'
-      args '--network microservicios_docker-microservices-network'
-    }
-
-  }
+  agent none
   stages {
-    stage('Print') {
+    stage('maven version') {
       steps {
-        echo 'Inicio de pipeline'
+        sh 'mvn --version'
       }
     }
 
