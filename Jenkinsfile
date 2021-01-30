@@ -1,13 +1,8 @@
 pipeline {
-  agent any
+  agent none
   stages {
     stage('error') {
-      agent {
-        node {
-          label 'Main'
-        }
-
-      }
+      agent any
       steps {
         sh 'mvn --version'
       }
