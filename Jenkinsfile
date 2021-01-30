@@ -1,17 +1,12 @@
 pipeline {
-  agent {
-    docker {
-      args '--network microservicios_docker-microservices-network'
-      image 'nonave/eureka:latest'
+    agent {
+        docker { image 'node:14-alpine' }
     }
-
-  }
-  stages {
-    stage('Build') {
-      steps {
-        sh 'mvn clean install -Dlicense.skip=true'
-      }
+    stages {
+        stage('Test') {
+            steps {
+                sh 'node --version'
+            }
+        }
     }
-
-  }
 }
