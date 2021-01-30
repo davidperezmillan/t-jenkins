@@ -1,10 +1,21 @@
 pipeline {
   agent none
   stages {
-    stage('error') {
-      agent any
-      steps {
-        sh 'mvn --version'
+    stage('Info') {
+      parallel {
+        stage('info maven') {
+          agent any
+          steps {
+            sh 'mvn --version'
+          }
+        }
+
+        stage('info version') {
+          steps {
+            sh 'mvn --version'
+          }
+        }
+
       }
     }
 
