@@ -7,9 +7,9 @@ pipeline {
 
   }
   stages {
-    stage('Test') {
+    stage('Print') {
       steps {
-        sh 'sh \'docker --version\''
+        echo 'Inicio de pipeline'
       }
     }
 
