@@ -3,24 +3,23 @@ pipeline {
   stages {
     stage('Info') {
       parallel {
-        stage('info maven') {
-          agent any
-          steps {
-            sh 'mvn --version'
-          }
-        }
-
-        stage('info version') {
-          agent any
-          steps {
-            sh 'mvn --version'
-          }
-        }
-
-        stage('Info JAVA Version') {
+        stage('info Maven version') {
           agent {
             docker {
-              image 'openjdk:8-jre'
+              image 'davidperez01/jenkins'
+            }
+
+          }
+          steps {
+            echo 'Hello, Maven'
+            sh 'mvn --version'
+          }
+        }
+
+        stage('Info JAVA version') {
+          agent {
+            docker {
+              image 'davidperez01/jenkins'
             }
 
           }
